@@ -49,30 +49,17 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
+    // initial score board
     let compScore = 0
     let playerScore = 0
 
-    for (let i = 0; i < 5; i++){
-        let choice = prompt("Pick rock, paper or scissors")
-        console.log(getComputerChoice())
-        
-        let result = playRound(choice,getComputerChoice())
-
-        
-
-        if (result[4,6] == "win"){
-            return playerScore + 1
-        }
-
-        else if (result[4,7] == "lose"){
-            return compScore + 1
-        }
-
-        else{
-            return
-        }
-
-    }
-
-    console.log(compScore, playerScore)
+    // getting a choice from the player
+    let playerChoice = prompt("Pick rock, paper or scissors")
+  
+    //playing a round
+    let compChoice = getComputerChoice()
+    let outcome = playRound(playerChoice,compChoice)
+    
+    //printing the results
+    console.log("You chose " + playerChoice +". Computer chose " + compChoice + ". " + outcome)
 }
