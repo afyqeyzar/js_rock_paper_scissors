@@ -49,9 +49,6 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
-    // initial score board
-    let compScore = 0
-    let playerScore = 0
 
     // getting a choice from the player
     let playerChoice = prompt("Pick rock, paper or scissors")
@@ -62,4 +59,27 @@ function game(){
     
     //printing the results
     console.log("You chose " + playerChoice +". Computer chose " + compChoice + ". " + outcome)
+}
+
+function game5(){
+    //initial score
+    let playerScore = 0
+    let compScore = 0
+
+    for (let i = 1; i < 6; i++) {
+        //printing the rounds
+        console.log("Round " + i)
+        
+        // getting a choice from the player
+        let playerChoice = prompt("Pick rock, paper or scissors")
+    
+        //playing a round
+        let compChoice = getComputerChoice()
+        let outcome = playRound(playerChoice,compChoice)
+        
+        //printing the results
+        console.log("You chose " + playerChoice +". Computer chose " + compChoice + ". " + outcome)
+
+    }
+
 }
