@@ -59,12 +59,13 @@ function game(){
     
     //printing the results
     console.log("You chose " + playerChoice +". Computer chose " + compChoice + ". " + outcome)
+    
 }
 
 function game5(){
     //initial score
-    let playerScore = 0
-    let compScore = 0
+    var playerScore = 0
+    var compScore = 0
 
     for (let i = 1; i < 6; i++) {
         //printing the rounds
@@ -78,8 +79,20 @@ function game5(){
         let outcome = playRound(playerChoice,compChoice)
         
         //printing the results
-        console.log("You chose " + playerChoice +". Computer chose " + compChoice + ". " + outcome)
+        console.log("You chose " + playerChoice + ". Computer chose " + compChoice + ". " + outcome)
 
+        if (outcome.indexOf("w") == 4){
+            playerScore += 1
+        }
+
+        else if (outcome.indexOf("l") == 4){
+            compScore += 1
+        }
+        else {
+            playerScore += 0
+        }
+
+        console.log("Player: " + playerScore ,"Computer: " + compScore)
     }
 
 }
