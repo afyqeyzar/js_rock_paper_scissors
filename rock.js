@@ -95,4 +95,18 @@ function game5(){
         console.log("Player: " + playerScore ,"Computer: " + compScore)
     }
 
+    if (playerScore > compScore){
+        console.log("Congrats, you beat the computer!")
+    }
+
+    else if (playerScore == compScore){
+        console.log("It seems to be a tie.")
+
+    }
+
+    else {
+        console.log("You lost, better luck nest time :/")
+    }
+
+
 }
