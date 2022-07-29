@@ -48,17 +48,17 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function game(){
+function game(playerChoice){
 
     // getting a choice from the player
-    let playerChoice = prompt("Pick rock, paper or scissors")
+    // let playerChoice = prompt("Pick rock, paper or scissors")
   
     //playing a round
     let compChoice = getComputerChoice()
     let outcome = playRound(playerChoice,compChoice)
     
     //printing the results
-    console.log("You chose " + playerChoice +". Computer chose " + compChoice + ". " + outcome)
+    return ("You chose " + playerChoice +". Computer chose " + compChoice + ". " + outcome)
     
 }
 
@@ -117,10 +117,10 @@ function printResults(playerChoice){
 }
 
 const rock = document.querySelector('#rock');
-rock.addEventListener('click', () => {console.log(playRound("rock", getComputerChoice()))});
+rock.addEventListener('click', () => console.log(game("rock")));
 
 const paper = document.querySelector('#paper');
-paper.addEventListener('click', () => {console.log(playRound("paper", getComputerChoice()))});
+paper.addEventListener('click', () => console.log(game("paper")));
 
 const scissors = document.querySelector('#scissors');
-scissors.addEventListener('click', () => {console.log(playRound("scissors", getComputerChoice()))});
+scissors.addEventListener('click', () => console.log(game("scissors")));
