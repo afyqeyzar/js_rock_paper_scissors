@@ -11,39 +11,59 @@ function getComputerChoice(){
     }
 }
 
+
+
 function playRound(playerSelection, computerSelection){
     
     let choice = playerSelection.toLowerCase()
+    const buttons = document.querySelector('#buttons')
+    const div = document.createElement('div')   
+    
 
     if (choice === computerSelection){
-        return "its a tie :/"
+        //return "its a tie :/"
+        div.textContent = "its a tie :/"
+        buttons.appendChild(div)
     }
 
     else if(computerSelection === "rock"){
         if (choice === "paper"){
-            return "You win, paper beats rock!"
+            //return "You win, paper beats rock!"
+            div.textContent = "You win, paper beats rock!"
+            buttons.appendChild(div)
         }
         else if (choice === "scissors"){
-            return "You lose, rock beats scissors!"
+            //return "You lose, rock beats scissors!"
+            div.textContent = "You lose, rock beats scissors!"
+            buttons.appendChild(div)
         }
     }
 
     else if(computerSelection === "paper"){
         if (choice === "scissors"){
-            return "You win, scissors beats paper!"
+            //return "You win, scissors beats paper!"
+            div.textContent = "You win, scissors beats paper!"
+            buttons.appendChild(div)
+            
         }
         else if (choice === "rock"){
-            return "You lose, paper beats rock!"
+            //return "You lose, paper beats rock!"
+            div.textContent = "You lose, paper beats rock!"
+            buttons.appendChild(div)
         }
     }
 
     /* if computer is scissors */
     else {
         if (choice === "rock"){
-            return "You win, rock beats scissors!"
+            //return "You win, rock beats scissors!"
+            div.textContent = "You win, rock beats scissors!"
+            buttons.appendChild(div)
         }
         else if (choice === "paper"){
-            return "You lose, scissors beats paper"
+            //return "You lose, scissors beats paper"
+            div.textContent = "You lose, scissors beats paper"
+            buttons.appendChild(div)
         }
     }
 }
@@ -56,9 +76,11 @@ function game(playerChoice){
     //playing a round
     let compChoice = getComputerChoice()
     let outcome = playRound(playerChoice,compChoice)
+    //let outcome = playRound(playerChoice, playerChoice)
     
     //printing the results
-    return ("You chose " + playerChoice +". Computer chose " + compChoice + ". " + outcome)
+    //return ("You chose " + playerChoice +". Computer chose " + compChoice + ". " + outcome)
+    return outcome
     
 }
 
@@ -117,10 +139,10 @@ function printResults(playerChoice){
 }
 
 const rock = document.querySelector('#rock');
-rock.addEventListener('click', () => console.log(game("rock")));
+rock.addEventListener('click', () => {game("rock")});
 
 const paper = document.querySelector('#paper');
-paper.addEventListener('click', () => console.log(game("paper")));
+paper.addEventListener('click', () => {game("paper")});
 
 const scissors = document.querySelector('#scissors');
-scissors.addEventListener('click', () => console.log(game("scissors")));
+scissors.addEventListener('click', () => {game("scissors")});
