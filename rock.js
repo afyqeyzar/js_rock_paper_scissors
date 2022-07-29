@@ -110,3 +110,17 @@ function game5(){
 
 
 }
+
+//this function doesnt work when put into rock.addEventListener
+function printResults(playerChoice){
+    console.log(playRound(playerChoice, getComputerChoice()))
+}
+
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {console.log(playRound("rock", getComputerChoice()))});
+
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {console.log(playRound("paper", getComputerChoice()))});
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {console.log(playRound("scissors", getComputerChoice()))});
