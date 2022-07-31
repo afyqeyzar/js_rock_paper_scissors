@@ -19,6 +19,13 @@ h5 {
     margin-bottom: 10px;
 }
 
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #buttons {
     display: flex;
     justify-content: space-between;
@@ -30,6 +37,7 @@ button {
     border: 2px solid black;
     height: auto;
     width: 100px;
+    margin: 0px 10px;
 }
 
 .choices {
@@ -72,4 +80,11 @@ button {
     justify-content: center;
     font-size: 50px;
     font-weight: bold;
+}
+
+.refresh-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
 }

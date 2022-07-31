@@ -128,43 +128,27 @@ function game(playerChoice){
 
 const content = document.querySelector('#content');
 const message = document.createElement('div');
-message.classList.add('message')
+message.classList.add('message');
+
+const refreshBtn = document.createElement('button');
+refreshBtn.classList.add('refresh-btn');
+refreshBtn.textContent = 'play again'
+
+function refreshPage(){
+    window.location.reload();
+} 
+
+refreshBtn.addEventListener('click', refreshPage);
 
 
 function winner() {
     message.textContent = 'you won :)'
     content.append(message);
+    content.append(refreshBtn)
 }
 
 function loser() {
     message.textContent = 'you lost :('
     content.append(message);
+    content.append(refreshBtn)
 }
-
-//this was an old function to play 5 round but now does not work
-function game5(){
-    //initial score
-    let playerScore = 0
-    let compScore = 0
-
-    for (let i = 1; i < 6; i++) {
-        //printing the rounds
-        console.log("Round " + i)
-
-        // getting a choice from the player
-        let playerChoice = prompt("Pick rock, paper or scissors")
-
-        //playing a round
-        let compChoice = getComputerChoice()
-        let outcome = playRound(playerChoice,compChoice)
-
-        //printing the results
-        console.log("You chose " + playerChoice +". Computer chose " + compChoice + ". " + outcome)
-
-    }
-
-
-}
-
-
-
