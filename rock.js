@@ -15,9 +15,12 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection){
     
-    let choice = playerSelection.toLowerCase()
+    let choice = playerSelection
     const buttons = document.querySelector('#buttons')
-    const div = document.createElement('div')   
+    const div = document.createElement('div')  
+    
+    //var playerScore = 0
+    //var compScore = 0
     
 
     if (choice === computerSelection){
@@ -31,11 +34,13 @@ function playRound(playerSelection, computerSelection){
             //return "You win, paper beats rock!"
             div.textContent = "You win, paper beats rock!"
             buttons.appendChild(div)
+            playerScore += 1
         }
         else if (choice === "scissors"){
             //return "You lose, rock beats scissors!"
             div.textContent = "You lose, rock beats scissors!"
             buttons.appendChild(div)
+            compScore +=1
         }
     }
 
@@ -89,45 +94,20 @@ function game5(){
     var playerScore = 0
     var compScore = 0
 
+    
+
     for (let i = 1; i < 6; i++) {
         //printing the rounds
-        console.log("Round " + i)
+        console.log("Round " + i);
+
+        const rock = document.querySelector('#rock');
+        //playerChoice = rock.addEventListener('click', () => {return "rock"});
+        //compChoice = getComputerChoice()
+
+        return game(playerChoice,compChoice)
+
+
         
-        // getting a choice from the player
-        let playerChoice = prompt("Pick rock, paper or scissors")
-    
-        //playing a round
-        let compChoice = getComputerChoice()
-        let outcome = playRound(playerChoice,compChoice)
-        
-        //printing the results
-        console.log("You chose " + playerChoice + ". Computer chose " + compChoice + ". " + outcome)
-
-        if (outcome.indexOf("w") == 4){
-            playerScore += 1
-        }
-
-        else if (outcome.indexOf("l") == 4){
-            compScore += 1
-        }
-        else {
-            playerScore += 0
-        }
-
-        console.log("Player: " + playerScore ,"Computer: " + compScore)
-    }
-
-    if (playerScore > compScore){
-        console.log("Congrats, you beat the computer!")
-    }
-
-    else if (playerScore == compScore){
-        console.log("It seems to be a tie.")
-
-    }
-
-    else {
-        console.log("You lost, better luck nest time :/")
     }
 
 
@@ -138,11 +118,14 @@ function printResults(playerChoice){
     console.log(playRound(playerChoice, getComputerChoice()))
 }
 
+//const play = document.querySelector("#play");
+//play.addEventListener('click', game5)
+
 const rock = document.querySelector('#rock');
-rock.addEventListener('click', () => {game("rock")});
+rock.addEventListener('click', () => {game("paper")});
 
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {game("paper")});
 
 const scissors = document.querySelector('#scissors');
-scissors.addEventListener('click', () => {game("scissors")});
+scissors.addEventListener('click', () => {game("scissors")})

@@ -4,3 +4,23 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.choices {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.playerChoice, .compChoice, .result-box{
+    background-color: pink;
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+}
+
+.pChoice, .cChoice, .result-text{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
