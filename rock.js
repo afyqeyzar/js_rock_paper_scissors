@@ -17,44 +17,66 @@ function playRound(playerSelection, computerSelection){
     
     let choice = playerSelection
     const buttons = document.querySelector('#buttons')
-    const div = document.createElement('div')  
-    
+    const div = document.createElement('div')
+    const playerBox = document.querySelector('.playerChoice')
+    const compBox = document.querySelector('.compChoice')
+    const results = document.querySelector('.result-box')
+     
     //var playerScore = 0
     //var compScore = 0
     
 
     if (choice === computerSelection){
         //return "its a tie :/"
-        div.textContent = "its a tie :/"
-        buttons.appendChild(div)
+        //div.textContent = "its a tie :/"
+        //buttons.appendChild(div)
+        
+        playerBox.textContent = playerSelection
+        compBox.textContent = computerSelection
+        results.textContent = 'its a tie :/'
     }
 
     else if(computerSelection === "rock"){
         if (choice === "paper"){
             //return "You win, paper beats rock!"
-            div.textContent = "You win, paper beats rock!"
-            buttons.appendChild(div)
-            playerScore += 1
+            //div.textContent = "You win, paper beats rock!"
+            //buttons.appendChild(div)
+            //playerScore += 1
+
+            playerBox.textContent = playerSelection
+            compBox.textContent = computerSelection
+            results.textContent = 'You win, paper beats rock!'
         }
         else if (choice === "scissors"){
             //return "You lose, rock beats scissors!"
-            div.textContent = "You lose, rock beats scissors!"
-            buttons.appendChild(div)
-            compScore +=1
+            //div.textContent = "You lose, rock beats scissors!"
+            //buttons.appendChild(div)
+            //compScore +=1
+
+            playerBox.textContent = playerSelection
+            compBox.textContent = computerSelection
+            results.textContent = 'You lose, rock beats scissors!'
         }
     }
 
     else if(computerSelection === "paper"){
         if (choice === "scissors"){
             //return "You win, scissors beats paper!"
-            div.textContent = "You win, scissors beats paper!"
-            buttons.appendChild(div)
-            
+            //div.textContent = "You win, scissors beats paper!"
+            //buttons.appendChild(div)
+
+            playerBox.textContent = playerSelection
+            compBox.textContent = computerSelection
+            results.textContent = 'You win, scissors beats paper!'
         }
         else if (choice === "rock"){
             //return "You lose, paper beats rock!"
-            div.textContent = "You lose, paper beats rock!"
-            buttons.appendChild(div)
+            //div.textContent = "You lose, paper beats rock!"
+            //buttons.appendChild(div)
+
+            playerBox.textContent = playerSelection
+            compBox.textContent = computerSelection
+            results.textContent = 'You lose, paper beats rock!'
         }
     }
 
@@ -62,13 +84,21 @@ function playRound(playerSelection, computerSelection){
     else {
         if (choice === "rock"){
             //return "You win, rock beats scissors!"
-            div.textContent = "You win, rock beats scissors!"
-            buttons.appendChild(div)
+            //div.textContent = "You win, rock beats scissors!"
+            //buttons.appendChild(div)
+
+            playerBox.textContent = playerSelection
+            compBox.textContent = computerSelection
+            results.textContent = 'You win, rock beats scissors!'
         }
         else if (choice === "paper"){
             //return "You lose, scissors beats paper"
-            div.textContent = "You lose, scissors beats paper"
-            buttons.appendChild(div)
+            //div.textContent = "You lose, scissors beats paper"
+            //buttons.appendChild(div)
+
+            playerBox.textContent = playerSelection
+            compBox.textContent = computerSelection
+            results.textContent = 'You lose, scissors beats paper!'
         }
     }
 }
@@ -122,7 +152,7 @@ function printResults(playerChoice){
 //play.addEventListener('click', game5)
 
 const rock = document.querySelector('#rock');
-rock.addEventListener('click', () => {game("paper")});
+rock.addEventListener('click', () => {game("rock")});
 
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {game("paper")});
