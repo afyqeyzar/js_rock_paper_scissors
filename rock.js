@@ -1,3 +1,13 @@
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {game("rock")});
+
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {game("paper")});
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {game("scissors")})
+
+
 function getComputerChoice(){
     let rando = Math.floor(Math.random() * 3)
     if (rando === 2){
@@ -25,7 +35,7 @@ function playRound(playerSelection, computerSelection){
     const compScoreBox = document.querySelector('.compScore')
 
 
-    
+    //starts the scores at 0
     playerScoreBox.textContent = playerScore
     compScoreBox.textContent = compScore
 
@@ -97,20 +107,16 @@ function playRound(playerSelection, computerSelection){
 
 function game(playerChoice){
 
-    // getting a choice from the player
-    // let playerChoice = prompt("Pick rock, paper or scissors")
+
   
     //playing a round
     let compChoice = getComputerChoice()
     let outcome = playRound(playerChoice,compChoice)
-    //let outcome = playRound(playerChoice, playerChoice)
-    
-    //printing the results
-    //return ("You chose " + playerChoice +". Computer chose " + compChoice + ". " + outcome)
     return outcome
     
 }
 
+//this was an old function to play 5 round but now does not work
 function game5(){
     //initial score
     let playerScore = 0
@@ -135,19 +141,5 @@ function game5(){
 
 }
 
-//this function doesnt work when put into rock.addEventListener
-function printResults(playerChoice){
-    console.log(playRound(playerChoice, getComputerChoice()))
-}
 
-//const play = document.querySelector("#play");
-//play.addEventListener('click', game5)
 
-const rock = document.querySelector('#rock');
-rock.addEventListener('click', () => {game("rock")});
-
-const paper = document.querySelector('#paper');
-paper.addEventListener('click', () => {game("paper")});
-
-const scissors = document.querySelector('#scissors');
-scissors.addEventListener('click', () => {game("scissors")})
