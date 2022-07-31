@@ -121,23 +121,23 @@ function game(playerChoice){
 
 function game5(){
     //initial score
-    var playerScore = 0
-    var compScore = 0
-
-    
+    let playerScore = 0
+    let compScore = 0
 
     for (let i = 1; i < 6; i++) {
         //printing the rounds
-        console.log("Round " + i);
+        console.log("Round " + i)
 
-        const rock = document.querySelector('#rock');
-        //playerChoice = rock.addEventListener('click', () => {return "rock"});
-        //compChoice = getComputerChoice()
+        // getting a choice from the player
+        let playerChoice = prompt("Pick rock, paper or scissors")
 
-        return game(playerChoice,compChoice)
+        //playing a round
+        let compChoice = getComputerChoice()
+        let outcome = playRound(playerChoice,compChoice)
 
+        //printing the results
+        console.log("You chose " + playerChoice +". Computer chose " + compChoice + ". " + outcome)
 
-        
     }
 
 
