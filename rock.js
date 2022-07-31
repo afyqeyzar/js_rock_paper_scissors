@@ -5,7 +5,7 @@ const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {game("paper")});
 
 const scissors = document.querySelector('#scissors');
-scissors.addEventListener('click', () => {game("scissors")})
+scissors.addEventListener('click', () => {game("scissors")});
 
 
 function getComputerChoice(){
@@ -39,7 +39,17 @@ function playRound(playerSelection, computerSelection){
     playerScoreBox.textContent = playerScore
     compScoreBox.textContent = compScore
 
-    if (choice === computerSelection){
+    const WINNING_SCORE = 5
+
+    if (playerScore == WINNING_SCORE){
+        winner()
+    }
+
+    else if (compScore == WINNING_SCORE){
+        loser()
+    }
+
+    else if (choice === computerSelection){
         
         playerBox.textContent = playerSelection
         compBox.textContent = computerSelection
@@ -114,6 +124,21 @@ function game(playerChoice){
     let outcome = playRound(playerChoice,compChoice)
     return outcome
     
+}
+
+const content = document.querySelector('#content');
+const message = document.createElement('div');
+message.classList.add('message')
+
+
+function winner() {
+    message.textContent = 'you won :)'
+    content.append(message);
+}
+
+function loser() {
+    message.textContent = 'you lost :('
+    content.append(message);
 }
 
 //this was an old function to play 5 round but now does not work
