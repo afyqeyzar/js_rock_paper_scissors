@@ -55,7 +55,7 @@ function playRound(playerSelection, computerSelection){
 
             playerBox.textContent = playerSelection
             compBox.textContent = computerSelection
-            results.textContent = 'You lose, rock beats scissors!'
+            results.textContent = 'you lose, rock beats scissors!'
         }
     }
 
@@ -67,7 +67,7 @@ function playRound(playerSelection, computerSelection){
 
             playerBox.textContent = playerSelection
             compBox.textContent = computerSelection
-            results.textContent = 'You win, scissors beats paper!'
+            results.textContent = 'you win, scissors beats paper!'
         }
         else if (choice === "rock"){
             //return "You lose, paper beats rock!"
@@ -76,7 +76,7 @@ function playRound(playerSelection, computerSelection){
 
             playerBox.textContent = playerSelection
             compBox.textContent = computerSelection
-            results.textContent = 'You lose, paper beats rock!'
+            results.textContent = 'you lose, paper beats rock!'
         }
     }
 
@@ -89,7 +89,7 @@ function playRound(playerSelection, computerSelection){
 
             playerBox.textContent = playerSelection
             compBox.textContent = computerSelection
-            results.textContent = 'You win, rock beats scissors!'
+            results.textContent = 'you win, rock beats scissors!'
         }
         else if (choice === "paper"){
             //return "You lose, scissors beats paper"
@@ -98,7 +98,7 @@ function playRound(playerSelection, computerSelection){
 
             playerBox.textContent = playerSelection
             compBox.textContent = computerSelection
-            results.textContent = 'You lose, scissors beats paper!'
+            results.textContent = 'you lose, scissors beats paper!'
         }
     }
 }

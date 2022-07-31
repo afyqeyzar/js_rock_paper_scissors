@@ -1,5 +1,7 @@
 # js_rock_paper_scissors
+Play by selecting either rock, paper or scissors using the buttons
 
+(OLDER VERSION)
 Building a rock paper scissors game on javascript
 
 Designed to be played in the console.
