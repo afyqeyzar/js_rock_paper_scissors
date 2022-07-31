@@ -16,20 +16,20 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
     
     let choice = playerSelection
-    const buttons = document.querySelector('#buttons')
-    const div = document.createElement('div')
+    
     const playerBox = document.querySelector('.playerChoice')
     const compBox = document.querySelector('.compChoice')
     const results = document.querySelector('.result-box')
-     
-    //var playerScore = 0
-    //var compScore = 0
+    const playerScoreBox = document.querySelector('.playerScore')
+    const compScoreBox = document.querySelector('.compScore')
+
+    var playerScore = 0
+    var compScore = 0
     
+    playerScoreBox.textContent = playerScore
+    compScoreBox.textContent = compScore
 
     if (choice === computerSelection){
-        //return "its a tie :/"
-        //div.textContent = "its a tie :/"
-        //buttons.appendChild(div)
         
         playerBox.textContent = playerSelection
         compBox.textContent = computerSelection
@@ -38,20 +38,16 @@ function playRound(playerSelection, computerSelection){
 
     else if(computerSelection === "rock"){
         if (choice === "paper"){
-            //return "You win, paper beats rock!"
-            //div.textContent = "You win, paper beats rock!"
-            //buttons.appendChild(div)
-            //playerScore += 1
+            playerScore += 1
+            playerScoreBox.textContent = playerScore
 
             playerBox.textContent = playerSelection
             compBox.textContent = computerSelection
             results.textContent = 'You win, paper beats rock!'
         }
         else if (choice === "scissors"){
-            //return "You lose, rock beats scissors!"
-            //div.textContent = "You lose, rock beats scissors!"
-            //buttons.appendChild(div)
-            //compScore +=1
+            compScore +=1
+            compScoreBox.textContent = compScore
 
             playerBox.textContent = playerSelection
             compBox.textContent = computerSelection
@@ -61,18 +57,16 @@ function playRound(playerSelection, computerSelection){
 
     else if(computerSelection === "paper"){
         if (choice === "scissors"){
-            //return "You win, scissors beats paper!"
-            //div.textContent = "You win, scissors beats paper!"
-            //buttons.appendChild(div)
+            playerScore += 1
+            playerScoreBox.textContent = playerScore
 
             playerBox.textContent = playerSelection
             compBox.textContent = computerSelection
             results.textContent = 'you win, scissors beats paper!'
         }
         else if (choice === "rock"){
-            //return "You lose, paper beats rock!"
-            //div.textContent = "You lose, paper beats rock!"
-            //buttons.appendChild(div)
+            compScore +=1
+            compScoreBox.textContent = compScore
 
             playerBox.textContent = playerSelection
             compBox.textContent = computerSelection
@@ -83,18 +77,16 @@ function playRound(playerSelection, computerSelection){
     /* if computer is scissors */
     else {
         if (choice === "rock"){
-            //return "You win, rock beats scissors!"
-            //div.textContent = "You win, rock beats scissors!"
-            //buttons.appendChild(div)
+            playerScore += 1
+            playerScoreBox.textContent = playerScore
 
             playerBox.textContent = playerSelection
             compBox.textContent = computerSelection
             results.textContent = 'you win, rock beats scissors!'
         }
         else if (choice === "paper"){
-            //return "You lose, scissors beats paper"
-            //div.textContent = "You lose, scissors beats paper"
-            //buttons.appendChild(div)
+            compScore +=1
+            compScoreBox.textContent = compScore
 
             playerBox.textContent = playerSelection
             compBox.textContent = computerSelection
