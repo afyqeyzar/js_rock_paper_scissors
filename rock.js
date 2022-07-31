@@ -11,7 +11,8 @@ function getComputerChoice(){
     }
 }
 
-
+var playerScore = 0
+var compScore = 0
 
 function playRound(playerSelection, computerSelection){
     
@@ -23,8 +24,7 @@ function playRound(playerSelection, computerSelection){
     const playerScoreBox = document.querySelector('.playerScore')
     const compScoreBox = document.querySelector('.compScore')
 
-    var playerScore = 0
-    var compScore = 0
+
     
     playerScoreBox.textContent = playerScore
     compScoreBox.textContent = compScore
